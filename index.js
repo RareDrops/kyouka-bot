@@ -342,9 +342,9 @@ client.on("message", (message) => {
   const command = args.shift().toLowerCase();
 
   
-pat1 = "https://media1.tenor.com/images/005e8df693c0f59e442b0bf95c22d0f5/tenor.gif?itemid=10947495f";
+pat1 = "https://media1.tenor.com/images/005e8df693c0f59e442b0bf95c22d0f5/tenor.gif?itemid=10947495";
 pat2 = "https://media1.tenor.com/images/f5176d4c5cbb776e85af5dcc5eea59be/tenor.gif?itemid=5081286"; 
-pat3 = "hhttps://media1.tenor.com/images/f330c520a8dfa461130a799faca13c7e/tenor.gif?itemid=13911345";
+pat3 = "https://media1.tenor.com/images/f330c520a8dfa461130a799faca13c7e/tenor.gif?itemid=13911345";
 pat4 = "https://media1.tenor.com/images/143a887b46092bd880997119ecf09681/tenor.gif?itemid=15177421";
 pat5 = "https://media1.tenor.com/images/6bf8121f22560443e71de4340bdb36bb/tenor.gif?itemid=15151785";
 pat6 = "https://media1.tenor.com/images/f41b3974036070fd1c498acf17a3a42e/tenor.gif?itemid=14751753";

@@ -115,17 +115,23 @@ client.on("message", async message => {
         return message.reply('Something went wrong with adding a tag.');
       }
       
-		} else if (command === "tag") {
+		}  else if (command === "tag") {
 			const tagName = commandArgs;
 
 // equivalent to: SELECT * FROM tags WHERE name = 'tagName' LIMIT 1;
 const tag = await Tags.findOne({ where: { name: tagName } });
 if (tag) {
 	// equivalent to: UPDATE tags SET usage_count = usage_count + 1 WHERE name = 'tagName';
-	tag.increment('usage_count');
-	return message.channel.send(tag.get('description'));
-}
-return message.reply(`Could not find tag: ${tagName}`);
+  tag.increment('usage_count');
+  const description = tag.get('description')
+  if (description.startsWith('https')) {
+  return message.channel.send({files: [tag.get('description')]});
+  }
+  else {
+  return message.channel.send(tag.get('description'))
+  }}
+else return message.channel.send(tag.get('description'));
+
 		} else if (command === 'edittag') {
       const splitArgs = commandArgs.split(' ');
       const tagName = splitArgs.shift();

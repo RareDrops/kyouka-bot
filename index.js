@@ -205,6 +205,10 @@ return message.channel.send(`List of tags: ${tagString}`);
     const sayMessage = "<:KyoukaPout:634276917939273768>";
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
+  } 
+  if(command === "clanbattleinfo") {
+
+    message.channel.send("Kyouka Funclub - Clan Battle Info Folder: https://drive.google.com/drive/folders/1Lufya5iJKhAFZYXOmpLlwb_0HOU6iMDt?usp=sharing");
   }
   if(command === "f") {
     const user = message.author;

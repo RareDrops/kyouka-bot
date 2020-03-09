@@ -199,6 +199,10 @@ return message.channel.send(`List of tags: ${tagString}`);
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   } 
+   if(command === "sayc") {
+    const sayC = args.join(" ");
+    client.guilds.get('632280043044995092').channels.get('632280046702297089').send(sayC)
+  }
   if(command === "PLACEHOLDER FOR NEW COMMANDS") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 

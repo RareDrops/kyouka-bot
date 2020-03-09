@@ -62,8 +62,6 @@ client.user.setActivity("with Mimi-chan");
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
-});
 
 bot.on('guildMemberAdd', member => {
   console.log('User' + member.user.tag + 'has joined the server!');
@@ -75,7 +73,6 @@ bot.on('guildMemberAdd', member => {
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
 // https://discordjs.guide/sequelize/#delta-adding-a-tag
@@ -199,6 +196,11 @@ return message.channel.send(`List of tags: ${tagString}`);
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   } 
+   if(command === "sayc") {
+		const sayMessage = args.join(" ");
+		const channel = bot.get_channel(632280046702297089)
+		message.channel.send(sayMessage)
+   }
   if(command === "PLACEHOLDER FOR NEW COMMANDS") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 

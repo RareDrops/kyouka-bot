@@ -426,7 +426,7 @@ client.on("message", (message) => {
   const command = args.shift().toLowerCase();
 
   
-pat1 = "https://media1.tenor.com/images/005e8df693c0f59e442b0bf95c22d0f5/tenor.gif?itemid=10947495f";
+pat1 = "https://media1.tenor.com/images/005e8df693c0f59e442b0bf95c22d0f5/tenor.gif?itemid=10947495";
 pat2 = "https://media1.tenor.com/images/f5176d4c5cbb776e85af5dcc5eea59be/tenor.gif?itemid=5081286"; 
 pat3 = "hhttps://media1.tenor.com/images/f330c520a8dfa461130a799faca13c7e/tenor.gif?itemid=13911345";
 pat4 = "https://media1.tenor.com/images/143a887b46092bd880997119ecf09681/tenor.gif?itemid=15177421";
@@ -438,10 +438,8 @@ pat9 = "https://media1.tenor.com/images/2e62cd7491be4ec9f0ec210d648b80fd/tenor.g
 pat10 = "https://media1.tenor.com/images/daa885ec8a9cfa4107eb966df05ba260/tenor.gif?itemid=13792462";
 
 if(command === 'pat') {
-  const mention = args.join(" ");
-  const mentionID = message.member.id(mention)
-  const mentionUser = message.guild.members.get(mention).displayName
-  const mentionAuthor = message.author.displayName
+  const mentionUser = args.join(" ");
+  const mentionAuthor = message.author
   number = 9;
   var random = Math.floor (Math.random() * (number - 1 + 1)) +1;
   switch (random) {

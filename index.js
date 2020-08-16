@@ -162,22 +162,14 @@ return message.channel.send(`List of tags: ${tagString}`);
       return message.reply('Tag deleted.');
 		}
 	}
-  // It's good practice to ignore other bots. This also makes your bot ignore itself
-  // and not get into a spam loop (we call that "botception").
+  // Ignore other bots. This also makes your bot ignore itself.
 
   
-  // Also good practice to ignore any message that does not start with our prefix, 
-  // which is set in the configuration file.
+  // Ignore any message that does not start with our prefix, 
+  // Which is set in the configuration file.
   // *if(message.content.indexOf(config.prefix) !== 0) return;
-  
-  // Here we separate our "command" name, and our "arguments" for the command. 
-  // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
-  // command = say
-  // args = ["Is", "this", "the", "real", "life?"]
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  
-  // Let's go with a few common example commands! Feel free to delete or change those.
   
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
@@ -201,7 +193,7 @@ guildID.leave();
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
     const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    // Then we delete the command message. The catch just ignores the error with a cute smiley thing.
     message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
@@ -230,7 +222,6 @@ guildID.leave();
     // join(' ') takes all the various parts to make it a single string.
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "No reason provided"
-    // Now, time for a swift kick in the nuts!
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
@@ -239,7 +230,6 @@ guildID.leave();
   
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
-    // In the real world mods could ban too, but this is just an example, right? ;)
     if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     
@@ -260,7 +250,6 @@ guildID.leave();
     return message.reply("Sorry, you don't have permissions to use this!");
     // get the delete count, as an actual number.
     const deleteCount = parseInt(args[0], 10);
-    // Ooooh nice, combined conditions. <3
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
     // So we get our messages, and delete them.

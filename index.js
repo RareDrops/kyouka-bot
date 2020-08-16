@@ -1,8 +1,7 @@
 // Load up the discord.js library
 const Discord = require("discord.js");
 const Sequelize = require('sequelize');
-// This is your client. Some people call it `bot`, some people call it `self`, 
-// this is what we're refering to. Your client.
+// My client.
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 const SQLite = require("better-sqlite3");
 const sql = new SQLite('./scores.sqlite');

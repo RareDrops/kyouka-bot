@@ -444,32 +444,23 @@ if(command === 'pat') {
   var random = Math.floor (Math.random() * (number - 1 + 1)) +1;
   switch (random) {
   case 1 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat1)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat1)); message.channel.send(`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 2 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat2)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat2)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 3 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat3)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat3)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 5 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat4)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat4)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 4 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat5)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat5)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 6 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat6)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat6)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 7 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat7)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat7)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 8 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat8)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat8)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 9 :message.channel.send(new Discord.RichEmbed()
-  .setImage(pat9)
-  .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;
+  .setImage(pat9)); message.channel.send (`${mentionUser}, you got a pat from ${mentionAuthor}`); break;
   case 10 :message.channel.send(new Discord.RichEmbed()
   .setImage(pat10)
   .addField(`${mentionUser}, you got a pat from ${mentionAuthor}`)); break;

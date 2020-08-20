@@ -352,12 +352,36 @@ client.on("message", (message) => {
       await msg.react("3️⃣")
       await msg.react("4️⃣")
       await msg.react("5️⃣")
+      await msg.react("❌")
+      // using an await to make reaction in order
+    })
+  }
+  if(message.content.startsWith(prefix + "character-roles")){
+    const embed = new Discord.RichEmbed()
+    .setColor(0xffffff)
+    .setTitle("Character roles")
+    .setDescription(`React to add role, Unreact to remove role \n\n 🇦 Pecorine \n\n 🇧 Misogi \n\n 🇨 Mimi \n\n 🇩 Yuni \n\n 🇪 Shinobu \n\n 🇫 Rino \n\n 🇬 Kokkoro \n\n 🇭 Miyako \n\n 🇮 Pudding \n\n 🇯 Neneka \n\n 🇰 Maho \n\n 🇱 Muimi \n\n 🇲 Ilya \n\n 🇳 Tomo`)
+    message.channel.send(embed).then(async msg => {
+      await msg.react("🇦")
+      await msg.react("🇧")
+      await msg.react("🇨") 
+      await msg.react("🇩")
+      await msg.react("🇪")
+      await msg.react("🇫")
+      await msg.react("🇬")
+      await msg.react("🇭")
+      await msg.react("🇮")
+      await msg.react("🇯")
+      await msg.react("🇰")
+      await msg.react("🇱")
+      await msg.react("🇲")
+      await msg.react("🇳")
       // using an await to make reaction in order
     })
   }
 });
     
-    
+     //boss roles
     client.on("messageReactionAdd", async (reaction, user) => {
       if (reaction.message.partial) await reaction.message.fetch();
       if (reaction.partial) await reaction.fetch()
@@ -381,6 +405,10 @@ client.on("message", (message) => {
           await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("738880704779386931")});
         return; //if channel isnt self role
       }
+      if (reaction.emoji.name === "❌") {
+        await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRoles("738880435420921927", "738880543453610174", "738880611711844412", "738880657358454804", "738880704779386931")});
+      return;
+    }
     })
     client.on("messageReactionRemove", async (reaction, user) => {
       if (reaction.message.partial) await reaction.message.fetch();
@@ -406,10 +434,116 @@ client.on("message", (message) => {
       }
         if (reaction.emoji.name === "5️⃣") {
           await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("738880704779386931")});
-      } else {
+      } else if (reaction.emoji.name === "❌") {
+        await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("738880435420921927", "738880543453610174", "738880611711844412", "738880657358454804", "738880704779386931")});
+      return; //if channel isnt self role
+    }{
         return; //if channel isnt self role
       }
     })
+
+    
+//character roles
+client.on("messageReactionAdd", async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  if (reaction.partial) await reaction.fetch()
+  if (user.bot) return;
+  if (!reaction.message.guild) return;
+  if (reaction.message.channel.id === "738910839620370542")
+    if (reaction.emoji.name === "🇦") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("638820320941441034")});
+  }
+    if (reaction.emoji.name === "🇧") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("634212521489989632")});
+  }     
+    if (reaction.emoji.name === "🇨") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("634212673785036811")});
+  }
+    if (reaction.emoji.name === "🇩") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("634228277103558686")});
+  }
+    if (reaction.emoji.name === "🇪") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("634228757212954624")});
+  } 
+    if (reaction.emoji.name === "🇫") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("667766563310403625")});
+  } 
+    if (reaction.emoji.name === "🇬") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("634229614356594727")});
+  }
+    if (reaction.emoji.name === "🇭") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("637510149077991444")});
+  }     
+    if (reaction.emoji.name === "🇮") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("637510642672336907")});
+  }
+    if (reaction.emoji.name === "🇯") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("637531464665399296")});
+  }
+    if (reaction.emoji.name === "🇰") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("638151055703670794")});
+  }     
+    if (reaction.emoji.name === "🇱") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("638306769046601748")});
+  }
+    if (reaction.emoji.name === "🇲") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("677774172554002452")});
+  }
+    if (reaction.emoji.name === "🇳") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("715570448892428319")});
+    return; //if channel isnt self role
+  }
+})
+client.on("messageReactionRemove", async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  if (reaction.partial) await reaction.fetch()
+  if (user.bot) return;
+  if (!reaction.message.guild) return;
+  //if (reaction.message.channel.id === "639729715955105792")
+  if (reaction.emoji.name === "🇦") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("638820320941441034")});
+}
+  if (reaction.emoji.name === "🇧") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("634212521489989632")});
+}     
+  if (reaction.emoji.name === "🇨") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("634212673785036811")});
+}
+  if (reaction.emoji.name === "🇩") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("634228277103558686")});
+}
+  if (reaction.emoji.name === "🇪") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("634228757212954624")});
+} 
+  if (reaction.emoji.name === "🇫") {
+  await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("667766563310403625")});
+} 
+  if (reaction.emoji.name === "🇬") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("634229614356594727")});
+}
+  if (reaction.emoji.name === "🇭") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("637510149077991444")});
+}     
+  if (reaction.emoji.name === "🇮") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("637510642672336907")});
+}
+  if (reaction.emoji.name === "🇯") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("637531464665399296")});
+}
+  if (reaction.emoji.name === "🇰") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("638151055703670794")});
+}     
+  if (reaction.emoji.name === "🇱") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("638306769046601748")});
+}
+  if (reaction.emoji.name === "🇲") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("677774172554002452")});
+}
+  if (reaction.emoji.name === "🇳") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("715570448892428319")});
+  return; //if channel isnt self role
+  }
+})
 
 // THIS BLOCK OF CODE IS FOR HEADPATS
 client.on("message", (message) => {
@@ -2777,6 +2911,4 @@ if(command =='skillinfo') {
 
 });
  
-
-
 client.login(config.token);

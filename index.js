@@ -245,7 +245,7 @@ guildID.leave();
   }
   if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
-    if(!message.member.roles.some(r=>["Danchou", "Sub leader Fuckers"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Danchou", "Sub leader Fuckers", "Botter"].includes(r.name)) )
     return message.reply("Sorry, you don't have permissions to use this!");
     // get the delete count, as an actual number.
     const deleteCount = parseInt(args[0], 10);
@@ -352,7 +352,7 @@ client.on("message", (message) => {
       await msg.react("3️⃣")
       await msg.react("4️⃣")
       await msg.react("5️⃣")
-      await msg.react("❌")
+     // await msg.react("❌")
       // using an await to make reaction in order
     })
   }
@@ -376,6 +376,9 @@ client.on("message", (message) => {
       await msg.react("🇱")
       await msg.react("🇲")
       await msg.react("🇳")
+      await msg.react("🇴")
+      await msg.react("🇵")
+	
       // using an await to make reaction in order
     })
   }
@@ -491,6 +494,12 @@ client.on("messageReactionAdd", async (reaction, user) => {
   }
     if (reaction.emoji.name === "🇳") {
       await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("715570448892428319")});
+  }
+    if (reaction.emoji.name === "🇴") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("715570448892428319")});
+  }
+    if (reaction.emoji.name === "🇵") {
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("715570448892428319")});
     return; //if channel isnt self role
   }
 })
@@ -541,7 +550,13 @@ client.on("messageReactionRemove", async (reaction, user) => {
 }
   if (reaction.emoji.name === "🇳") {
     await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("715570448892428319")});
-  return; //if channel isnt self role
+}
+  if (reaction.emoji.name === "🇴") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("747172084848787568")});
+}
+  if (reaction.emoji.name === "🇵") {
+    await reaction.message.guild.fetchMember(user.id).then(member =>{ member.removeRole("747171970365521979")});
+return;
   }
 })
 

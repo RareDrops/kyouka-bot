@@ -452,7 +452,6 @@ client.on("messageReactionAdd", async (reaction, user) => {
   if (reaction.partial) await reaction.fetch()
   if (user.bot) return;
   if (!reaction.message.guild) return;
-  if (reaction.message.channel.id === "738910839620370542")
     if (reaction.emoji.name === "🇦") {
       await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("638820320941441034")});
   }

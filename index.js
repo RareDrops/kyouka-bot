@@ -495,10 +495,10 @@ client.on("messageReactionAdd", async (reaction, user) => {
       await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("715570448892428319")});
   }
     if (reaction.emoji.name === "🇴") {
-      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("715570448892428319")});
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("747172084848787568")});
   }
     if (reaction.emoji.name === "🇵") {
-      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("715570448892428319")});
+      await reaction.message.guild.fetchMember(user.id).then(member =>{ member.addRole("747171970365521979")});
     return; //if channel isnt self role
   }
 })

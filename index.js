@@ -360,7 +360,7 @@ client.on("message", (message) => {
     const embed = new Discord.RichEmbed()
     .setColor(0xffffff)
     .setTitle("Character roles")
-    .setDescription(`React to add role, Unreact to remove role \n\n 🇦 Pecorine \n\n 🇧 Misogi \n\n 🇨 Mimi \n\n 🇩 Yuni \n\n 🇪 Shinobu \n\n 🇫 Rino \n\n 🇬 Kokkoro \n\n 🇭 Miyako \n\n 🇮 Pudding \n\n 🇯 Neneka \n\n 🇰 Maho \n\n 🇱 Muimi \n\n 🇲 Ilya \n\n 🇳 Tomo`)
+    .setDescription(`React to add role, Unreact to remove role \n\n 🇦 Pecorine \n\n 🇧 Misogi \n\n 🇨 Mimi \n\n 🇩 Yuni \n\n 🇪 Shinobu \n\n 🇫 Rino \n\n 🇬 Kokkoro \n\n 🇭 Miyako \n\n 🇮 Pudding \n\n 🇯 Neneka \n\n 🇰 Maho \n\n 🇱 Muimi \n\n 🇲 Ilya \n\n 🇳 Tomo \n\n 🇴 Yukari \n\n 🇵 Saren`)
     message.channel.send(embed).then(async msg => {
       await msg.react("🇦")
       await msg.react("🇧")

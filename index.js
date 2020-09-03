@@ -341,6 +341,9 @@ client.on("message", (message) => {
   if(message.content.toLowerCase()=== prefix + "send nudes") {
     message.channel.send({files: ["https://cdn.com/attachments/452127517734862850/642668977390223401/Kyoukalood.gif"]})
   } else
+  if(message.content.toLowerCase()=== "kyouka cum") {
+    message.channel.send("<:KyoukaIkimasu:634277561173803019> <a:nakadashi:678120112724639744> <:kyoukagasm:707303957566849067>")
+  } else
   if(message.content.startsWith(prefix + "cb-roles")) {
     const embed = new Discord.RichEmbed()
     .setColor(0xffffff)

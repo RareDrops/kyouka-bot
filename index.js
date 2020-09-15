@@ -270,7 +270,7 @@ client.on("message", async message => {
     message.channel.send("<:KyoukaREEE:634277119207407616>");
   } else
   if(message.content.toLowerCase()=== "ok") {
-    message.channel.send("<:KyoukaIkimasu:634277561173803019>");
+    message.channel.send("<:KyoukaIkimasu:634277561173803019>"); 
   } else
   if(message.content.toLowerCase()=== "worry") {
     message.channel.send("<:KyoukaWorry:634277390415167498>")
@@ -283,6 +283,9 @@ client.on("message", async message => {
   } else
   if(message.content.toLowerCase()=== "kyouka step on me") {
     message.channel.send({files: ["https://cdn.discordapp.com/attachments/640092288449642497/686695305034727432/EPvpufsVAAASm8d.png"]})
+  } else
+   if(message.content.toLowerCase()=== "a") {
+    message.channel.send({files: ["<:gura:755294983933657198>"]})
   } else
   if (message.content.toLowerCase()=== "add mystery fucker"){
     try {
